@@ -105,11 +105,33 @@
         let retriveData = document.getElementById('data').value
 
         let text = retriveData
-        const urlImages = text.trim().split('\n');
+
+        const urlsObject = text.trim().split('\n');
+
+        console.log(urlsObject)
+
+        const urlImages = [];
+
+        // urlsObject.forEach((url) => {
+        //     urlImages [url] = url.includes("http://") ? url.replace("http://", "https://") : url;
+        // });
+
+
+
+        urlsObject.forEach((url) => {
+            console.log(url)
+            urlImages.push(url.includes("http://") ? url.replace("http://", "https://") : url)
+        });
+
+
+        console.log(urlImages)
 
         if (document.getElementById('data').value == '') {
             alert('Please, insert a URL in the text field')
         } else {
+
+            
+
             for (let i = 0; i < urlImages.length; i++) {
                 console.log(urlImages[i]);
                 let imageCard = document.createElement('div')
