@@ -124,7 +124,7 @@
                 showResult(urlImages[i]);
 
                 function showResult(a) {
-                    fetch(a)
+                    fetch(`${a}`)
                         .then(res => res.blob())
                         // Converts to blob
                         .then(data => {
